@@ -1,0 +1,1034 @@
+/* Global Styles  */
+* {
+    margin: 0;
+    padding: 0;
+    transition: 0.5s;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+
+}
+
+body {
+    background-color: rgb(197, 188, 188);
+    color: black;
+}
+
+/* Header - Position the header at the top and style it with a blue background */
+header {
+    display: flex;
+    background-color: #0073e6;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    max-width: 100vw;
+    z-index: 1000;
+
+    /* Logo - Style for logo text with glow animation */
+
+}
+
+#logo {
+    color: white;
+    font-size: 1.5em;
+    font-family: "Poppins", sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding: 7px 15px;
+    animation: glow 1s infinite alternate;
+
+
+
+}
+
+@keyframes glow {
+
+    0%,
+    100% {
+        text-shadow:
+            0 0 5px rgba(255, 255, 255, 0.8),
+            0 0 10px rgba(255, 255, 255, 0.8),
+            0 0 15px rgba(247, 237, 237, 0.8),
+            0 0 20px rgba(216, 209, 209, 0.806);
+    }
+
+    50% {
+        text-shadow:
+            0 0 10px rgba(255, 255, 255, 1),
+            0 0 20px rgba(255, 255, 255, 1),
+            0 0 30px rgba(224, 216, 216, 0.838),
+            0 0 40px rgba(239, 227, 227, 0.918);
+    }
+}
+
+/* Navigation Toggle - Flexbox for positioning menu items and day and night toggle  */
+.nav-toggle-container {
+    display: flex;
+    align-items: center;
+    gap: clamp(10px, 3vw, 30px)
+        /* Responsive gap */
+
+}
+
+/* Menu Toggle - Hide checkbox input for menu toggle */
+#menu-toggle {
+    display: none;
+}
+
+/* Hamburger Icon - Icon size and pointer cursor for menu toggle */
+.hamburger {
+    font-size: clamp(24px, 4vw, 30px);
+    ;
+    cursor: pointer;
+    display: none;
+    color: white;
+}
+
+/* Navigation Menu - Flexbox to style menu items horizontally */
+nav ul {
+    display: flex;
+
+    width: clamp(150px, 50vw, 500px);
+
+    gap: clamp(7px, 3vw, 10px);
+    list-style: none;
+}
+
+/* Navigation Links - Styling for navigation links with hover effect */
+nav ul li a {
+    color: white;
+    padding: clamp(8px, 2vw, 10px);
+
+    font-size: clamp(14px, 1.5vw, 32px);
+    text-decoration: none;
+    transition: background-color 0.3s ease-in-out;
+
+}
+
+/* Hover Effect on Links  */
+
+nav ul li a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #f0f0f0;
+    box-shadow: 0px 2px 10px rgba(255, 255, 255, 0.3);
+
+}
+
+/* Toggle Styles for Dark Mode - Styling for toggle switch and positioning */
+
+
+#toggle {
+    display: none;
+}
+
+.display {
+    width: clamp(25%, 30vw, 40%);
+    ;
+    height: 50%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+
+}
+
+/* Toggle Label - Background color and shape of the toggle switch */
+.toogle-label {
+    background-color: #F3F3F3;
+    ;
+
+    width: clamp(50px, 8vw, 60px);
+    ;
+    height: clamp(25px, 5vw, 30px);
+    border-radius: 99px;
+    cursor: pointer;
+    position: relative;
+
+}
+
+/* Circle within Toggle - Circle element inside the toggle switch */
+.circle {
+
+    width: clamp(25px, 5vw, 30px);
+    height: clamp(25px, 5vw, 30px);
+    border-radius: 99px;
+    background-color: white;
+    position: absolute;
+    top: 50%;
+    left: 0%;
+    transform: translate(10%, -50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+
+}
+
+/* Sun and Moon Icons - Style for icons inside the toggle circle */
+svg {
+    width: clamp(16px, 4vw, 20px);
+    ;
+    position: absolute;
+}
+
+.sun {
+    color: #5486e3;
+    margin-top: 0%;
+    opacity: 1;
+}
+
+.moon {
+    margin-top: -150%;
+    color: white;
+    opacity: 0;
+}
+
+/* Dark Mode Toggle - Change toggle appearance when dark mode is active */
+input[type=checkbox]:checked+.display .toogle-label {
+    background-color: #1F1F21;
+}
+
+/* Move Circle for Dark Mode - Move the toggle circle to the opposite side */
+input[type=checkbox]:checked+.display .toogle-label .circle {
+    left: 100%;
+    transform: translate(-110%, -50%);
+    background: #2C2C2F;
+}
+
+/* Hide Sun and Show Moon in Dark Mode - Sun hides, moon shows */
+input[type=checkbox]:checked+.display .toogle-label .circle .sun {
+    margin-top: 200%;
+    opacity: 0;
+}
+
+input[type=checkbox]:checked+.display .toogle-label .circle .moon {
+    margin-top: 0%;
+    opacity: 1;
+}
+
+
+
+/* HOME SECTION */
+
+/* Home Section - Flexbox to center content in the viewport */
+.home {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: aliceblue;
+   
+}
+
+/* Home Container - Styling for the main content box */
+.home-container {
+    display: flex;
+
+    align-items: center;
+    width: 70%;
+    height: 70%;
+
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Hover Effect for Home Container - Slight scale-up on hover */
+.home-container:hover {
+    transform: scale(1.02);
+}
+
+/* Profile Image - Styling and animation for the profile picture */
+.profile img {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    animation: float 3s ease-in-out infinite;
+}
+
+/* Floating Effect - Keyframes for floating profile image */
+@keyframes float {
+    0% {
+        transform: translateY(0);
+        box-shadow: 0 0 5px rgba(0, 115, 230, 0.2);
+    }
+
+    50% {
+        transform: translateY(-10px);
+        box-shadow: 0 0 20px rgba(0, 115, 230, 0.8);
+    }
+
+    100% {
+        transform: translateY(0);
+        box-shadow: 0 0 5px rgba(0, 115, 230, 0.2);
+    }
+}
+
+
+
+/* Home Content - Positioned with flexbox, takes up available space beside the profile */
+.home-content {
+    flex: 2;
+    padding-left: 30px;
+}
+
+/* Profile - Flex container for centering the profile image */
+.profile {
+    flex: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.home-content h1 {
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+.home-content span {
+    color: #0073e6;
+}
+
+.home-content p {
+    font-size: 1.2em;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+/* Social Icons - Flexbox to arrange social media links */
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 5px;
+}
+
+.social-icons a {
+    display: inline-block;
+
+    justify-content: center;
+
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Social Icon Image - Size and opacity for the social icons */
+.social-icons a img {
+    width: 30px;
+    height: 30px;
+    opacity: 0.5;
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+/* Hover Effect on Social Icons - Increase size and opacity on hover */
+.social-icons a:hover img {
+    opacity: 1;
+    transform: scale(1.2);
+}
+
+.resume-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 1em;
+    text-decoration: none;
+    background-color: #0073e6;
+    color: white;
+    border-radius: 5px;
+    transition: background-color 0.3s ease-in-out, transform 0.3s;
+}
+
+.resume-btn:hover {
+    background-color: #005bb5;
+    transform: scale(1.05);
+}
+
+
+/* ABOUT SECTION */
+
+/* About Section - Flexbox layout for centering content with padding and background color */
+.about {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    padding: 80px 20px;
+    background-color: #f3f3f3;
+}
+
+/* About Container - Flexbox layout for content, with specific width, height, and box-shadow */
+.about-container {
+    display: flex;
+    width: 70%;
+    height: 70%;
+    max-width: 1000px;
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+
+    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.about-container:hover {
+    transform: scale(1.02);
+}
+
+/* Profile Image inside About Section - Styling the image with rounded corners and shadow */
+.about .profile img {
+
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+
+
+}
+
+/* About Content - Takes up remaining space in the container */
+.about-content {
+    flex: 2;
+}
+
+.about-content h2 {
+    font-size: 2em;
+    color: #222;
+    margin-bottom: 10px;
+}
+
+.about-content h2 span {
+    color: #0073e6;
+}
+
+.about-content p {
+    font-size: 1.1em;
+    color: #444;
+    line-height: 1.6;
+    margin-bottom: 20px;
+
+    text-align: left
+}
+
+
+.read-more-btn {
+    display: inline-block;
+    padding: 10px 25px;
+    font-size: 1em;
+    text-decoration: none;
+    background-color: #0073e6;
+    color: white;
+    border-radius: 6px;
+    transition: box-shadow 0.3s ease-in-out transform 0.2s ease;
+}
+
+/* Hover Effect on Read More Button - Add shadow and transform effect */
+.read-more-btn:hover {
+    box-shadow: 0 4px 10px rgba(27, 10, 10, 0.591);
+    transform: translateY(-2px)
+}
+
+
+
+
+
+/* Skills Section */
+
+.skills {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 80px 20px;
+    background-color: aliceblue;
+}
+
+.skill-container {
+    width: 70%;
+    max-width: 1000px;
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.skill-container:hover {
+    transform: scale(1.02);
+}
+
+.section-title {
+    font-size: 2em;
+    font-weight: bold;
+    margin-bottom: 40px;
+}
+
+.section-title span {
+    color: #0073e6;
+}
+
+.skills-list {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.skill {
+    margin-bottom: 20px;
+}
+
+.skill-name {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-bottom: 5px;
+    text-align: left;
+}
+
+/* Skill Bar -Background bar for the skill progress*/
+.skill-bar {
+    width: 100%;
+    background: #ddd;
+    height: 14px;
+    border-radius: 7px;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Skill Progress -actual progress indicator within the skill bar*/
+.skill-progress {
+    height: 100%;
+    background: #0073e6;
+    width: 0;
+    position: relative;
+    border-radius: 7px;
+    animation: fillProgress 2s ease-in-out forwards;
+}
+
+/* Skill Percentage */
+.skill-percent {
+    position: absolute;
+    right: -40px; 
+    font-size: 14px;
+    font-weight: bold;
+    color: black;
+
+  
+}
+
+/* Keyframes Animation to fill the progress bar over time */
+@keyframes fillProgress {
+    from {
+        width: 0;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+/* Certifications Section */
+.certifications {
+    background-color: #f3f3f3;
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.certificate-container {
+    width: 70%;
+    height: 70%;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 40px;
+    border-radius: 12px;
+    background-color: white;
+    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.certificate-container :hover {
+    transform: scale(1.02);
+}
+
+.certificate-container h2 {
+    color: #0073e6;
+}
+
+.certifications-list {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.cert-card {
+    background: #f3f3f3;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    text-align: center;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.cert-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 5px 20px rgb(66, 98, 175);
+}
+
+.cert-card h3 {
+    font-size: 1.4em;
+    margin-bottom: 10px;
+}
+
+.cert-card p {
+    font-size: 1em;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+.cert-btn {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 8px 15px;
+    background: #0073e6;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.cert-btn:hover {
+    background: #005bb5;
+}
+
+
+/* PROJECTS SECTION */
+
+.projects {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 80px 20px;
+    background-color: aliceblue;
+}
+
+.project-container {
+    width: 70%;
+    max-width: 1000px;
+    background: white;
+    padding: 40px 20px;
+    /* padding-bottom: 40px; */
+    border-radius: 12px;
+    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.project-container:hover {
+    transform: scale(1.02);
+}
+
+.projects h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+    font-weight: bold;
+    color: #007BFF;
+}
+
+.projects h2 span {
+    color: black;
+}
+
+/* Projects Grid - Flexbox layout for arranging project cards with wrapping and gaps between items */
+.projects-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* Individual Project Card - Flexbox layout for positioning cards and enabling hover effect */
+.project-card {
+    width: 250px;
+    height: 300px;
+    perspective: 1000px;
+    position: relative;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.project-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.8), 0 0 40px rgba(59, 130, 246, 0.5);
+}
+
+/* Inner card container - Used for rotating the card  */
+.card-inner {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+/* Hidden checkbox to trigger card flip when checked */
+.flip-checkbox {
+    display: none;
+}
+
+/* When checkbox is checked, rotate the card to show the back */
+.flip-checkbox:checked+.card-inner {
+    transform: rotateY(180deg);
+}
+
+/* Card front and back - Basic styling for both sides of the card */
+.card-front,
+.card-back {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    backface-visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Front card - White background */
+.card-front {
+    background-color: white;
+}
+
+.card-back {
+    background: rgba(30, 58, 138, 0.9);
+    color: white;
+    transform: rotateY(180deg);
+}
+
+/* Flip text - Styling for clickable text in the card */
+.flip-text {
+    color: #007BFF;
+    font-weight: bold;
+    cursor: pointer;
+
+    padding: 10px;
+    transition: color 0.3s ease-in-out;
+}
+
+.back-text {
+    color: #ffcc00;
+}
+
+.back-text:hover {
+    color: #ffaa00;
+}
+
+
+
+.contact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 80px 20px;
+    background-color: #f3f3f3;
+}
+
+.contact-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 70%;
+    max-width: 1000px;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.contact-container:hover {
+    transform: scale(1.02);
+}
+
+.contact h2 {
+    font-size: 2em;
+    color: #222;
+    margin-bottom: 10px;
+}
+
+.contact h2 span {
+    color: #0073e6;
+}
+
+
+.contact-form {
+    width: 90%;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.input-group {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.input-group label {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.input-group input,
+.input-group textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    background: #f9f9f9;
+    font-size: 16px;
+    outline: none;
+    transition: border 0.3s ease-in-out;
+}
+
+.input-group input:focus,
+.input-group textarea:focus {
+    border-color: #0073e6;
+    background: white;
+}
+
+.input-group textarea {
+    height: 120px;
+
+}
+
+.contact-btn {
+    padding: 10px 20px;
+    background: #0073e6;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+
+    align-self: center;
+    /* width: auto; */
+    transition: background-color 0.3s ease-in-out, transform 0.3s;
+}
+
+.contact-btn:hover {
+    background-color: #005bb5;
+    transform: scale(1.05);
+}
+
+/* FOOTER */
+
+footer {
+    background: #0073e6;
+    color: white;
+    padding: 5px 20px;
+    font-size: 14px;
+    position: relative;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.footer-links {
+    display: flex;
+    gap: 10px;
+}
+.footer-text {
+    margin: 0;
+    font-size: 14px;
+}
+.footer-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background: white;
+    color: #0073e6;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.footer-btn:hover {
+    background: #005bb5;
+    color: white;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+    transform: scale(1.05);
+   
+}
+.contact-info{
+    display: none;
+    font-size: 0.85rem;
+    color: white;
+
+}
+/* show the contact info on hover */
+.footer-btn:hover .contact-info{
+    display: inline-block;
+}
+
+
+
+
+
+/* Media query for devices with a screen width of 1024px or less (tablets and medium devices) */
+@media screen and (max-width: 1024px) {
+    .nav-toggle-container {
+
+        flex-direction: row-reverse;
+    }
+
+    /* Display the hamburger menu on medium devices */
+    .hamburger {
+        display: block;
+    }
+
+    /* Hide the main navigation links and change to a column layout */
+    nav ul {
+        display: none;
+        flex-direction: column;
+        background-color: #84b7e9;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        z-index: 10;
+        text-align: center;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    nav ul li a {
+        color: white;
+
+        font-size: 20px;
+    }
+
+    /* When the menu toggle checkbox is checked, show the navigation links */
+    #menu-toggle:checked+.hamburger+nav ul {
+        display: flex;
+    }
+   
+
+    .home-container {
+        flex-direction: column;
+        width: 90%;
+        text-align: center;
+
+    }
+
+    .home-content {
+        padding-left: 0;
+        flex: 1;
+    }
+
+    .profile img {
+        width: 350px;
+        height: 350px;
+    }
+
+    .social-icons {
+        justify-content: center;
+    }
+    .social-icons a img {
+        opacity: 1;
+    }
+
+    .about-container {
+        flex-direction: column;
+        gap: 20px;
+        width: 90%;
+
+    }
+
+    .about-content p {
+        max-width: 90%;
+        text-align: left;
+    }
+
+    .skill-container,
+    .certificate-container,
+    .project-container,
+    .contact-container {
+        width: 90%;
+    }
+
+
+
+
+
+}
+
+
+/* Media query for devices with a screen width of 400px or less (small mobile devices) */
+@media screen and (max-width: 400px) {
+
+    .social-icons {
+        justify-content: center;
+    }
+
+    nav ul {
+        top:90px;
+    }
+
+    .home-content {
+        padding-bottom: 20px;
+        padding-top: 20px;
+
+    }
+
+    .profile img {
+        width: 200px;
+        height: 200px;
+    }
+    
+
+    .about-container,
+    .skill-container,
+    .project-container,
+    .contact-container {
+
+        width: 100%;
+
+    }
+
+    .footer-container {
+        flex-direction: column-reverse;
+        gap: 10px;
+
+    }
+
+
+}
