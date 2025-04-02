@@ -29,7 +29,7 @@ Check out my portfolio live here: **[Portfolio Website](https://varsha-boddapati
 
 ##  Contact Me
  **Email:** varshaboddapati24@gmail.com     
- **LinkedIn:**https://www.linkedin.com/in/varsha-boddapati-9a9124211/
+ **LinkedIn:** https://www.linkedin.com/in/varsha-boddapati-9a9124211/
 
 ---
 
