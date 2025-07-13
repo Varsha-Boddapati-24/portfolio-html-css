@@ -95,12 +95,12 @@ header {
 /* Navigation Menu - Flexbox to style menu items horizontally */
 nav ul {
     display: flex;
-
-    width: clamp(150px, 50vw, 500px);
-
-    gap: clamp(7px, 3vw, 10px);
+    flex-wrap: wrap;
+    gap: 20px;
     list-style: none;
+    justify-content: flex-end;
 }
+
 
 /* Navigation Links - Styling for navigation links with hover effect */
 nav ul li a {
