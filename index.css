@@ -11,6 +11,10 @@
 body {
     background-color: rgb(197, 188, 188);
     color: black;
+  
+  overflow-x: hidden;
+
+
 }
 
 /* Header - Position the header at the top and style it with a blue background */
